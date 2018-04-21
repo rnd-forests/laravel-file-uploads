@@ -1,5 +1,7 @@
 # Laravel File Uploads
 
+Source code for this Viblo article: https://viblo.asia/p/xu-ly-cong-viec-upload-files-trong-laravel-over-engineering-or-not-1VgZvNA7ZAw
+
 ## Installation
 
 We use Docker and Docker Compose for constructing the development environment of the application. Therefore, we first need to install these two softwares:
@@ -74,3 +76,6 @@ To get an instance of a upload handler with shortcut name *avatar*
 resolve('upload')->handler('avatar');
 ```
 
+### TODO
+- Complete the unit tests.
+- Transform this to a package?
