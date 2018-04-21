@@ -1,7 +1,6 @@
 # Laravel File Uploads
 
-Source code for this Viblo article: https://viblo.asia/p/xu-ly-cong-viec-upload-files-trong-laravel-over-engineering-or-not-1VgZvNA7ZAw
-
+Source code for this Viblo article: https://viblo.asia/posts/1VgZvNA7ZAw
 ## Installation
 
 We use Docker and Docker Compose for constructing the development environment of the application. Therefore, we first need to install these two softwares:
