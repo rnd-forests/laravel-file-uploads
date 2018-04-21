@@ -17,7 +17,7 @@ In order to run `docker` command without **sudo** privilege:
 Change current directory to application code folder and run the following commands:
 - Copy file `.env.example` to `.env`, `docker-compose.yml.example` to `docker-compose.yml`
 - Start up docker containers: `docker-compose up -d`. To stop docker containers, using `docker-compose stop` command
-- Change to workspace environment: `docker exec -it chatty_workspace bash`
+- Change to workspace environment: `docker exec -it uploader_workspace bash`
 
 Inside workspace container, run the following commands:
 - Install composer packages: `composer install --no-suggest`
