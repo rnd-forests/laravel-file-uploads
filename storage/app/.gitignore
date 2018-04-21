@@ -1,0 +1,6 @@
+*
+!public/
+!avatars/
+!audio/
+!graphs/
+!.gitignore
