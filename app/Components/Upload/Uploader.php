@@ -85,7 +85,9 @@ abstract class Uploader
      */
     public function getFilePath()
     {
-        throw new RuntimeException('Path to the file must be specified.');
+        throw new RuntimeException('Relative path to the file
+                                   (with respect to the disk root directory and excluding the filename)
+                                   must be specified.');
     }
 
     /**
