@@ -4,6 +4,9 @@ namespace App\Components;
 
 use App\Upload;
 
+/**
+ * @property-read null|\App\Upload avatarImage
+ */
 trait HasAvatar
 {
     /**
@@ -22,7 +25,7 @@ trait HasAvatar
     /**
      * Get user's custom avatar.
      *
-     * @return null|\App\Models\Upload
+     * @return null|\App\Upload
      */
     public function getUploadedAvatar()
     {

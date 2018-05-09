@@ -40,7 +40,7 @@ class ClientFile
     }
 
     /**
-     * @return init
+     * @return int
      */
     public function size()
     {

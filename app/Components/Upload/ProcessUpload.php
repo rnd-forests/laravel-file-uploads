@@ -63,7 +63,7 @@ class ProcessUpload
     /**
      * Handle the job.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {

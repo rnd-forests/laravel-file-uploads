@@ -14,7 +14,7 @@ interface UploadHandler
     /**
      * Remove a stored file.
      *
-     * @param  string|\App\Models\Upload $file
+     * @param  string|\App\Upload $file
      * @return string
      */
     public function delete($file);
@@ -22,7 +22,7 @@ interface UploadHandler
     /**
      * Get URL of a stored file.
      *
-     * @param  string|\App\Models\Upload $file
+     * @param  string|\App\Upload $file
      * @return string
      */
     public function url($file);
@@ -48,6 +48,7 @@ interface UploadHandler
      * to the root directory of the disk.
      *
      * @return string
+     * @throws \RuntimeException
      */
     public function getFilePath();
 }

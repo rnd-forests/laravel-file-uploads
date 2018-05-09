@@ -15,6 +15,8 @@ class Version implements Rule
 
     /**
      * Create a new rule instance.
+     *
+     * @param \Composer\Semver\VersionParser $parser
      */
     public function __construct(VersionParser $parser)
     {

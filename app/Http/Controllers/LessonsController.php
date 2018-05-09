@@ -25,7 +25,7 @@ class LessonsController extends Controller
     }
 
     /**
-     * @param  \App\Http\Controllers\StoreRequest $request
+     * @param StoreRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRequest $request)

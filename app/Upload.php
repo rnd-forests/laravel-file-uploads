@@ -4,6 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string hashed_name
+ * @property string extension
+ * @property string basename
+ * @property string path
+ */
 class Upload extends Model
 {
     /**
