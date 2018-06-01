@@ -1,40 +1,44 @@
 version: '2'
 
 services:
-  php-fpm:
-    container_name: uploader_php-fpm
-    restart: always
-    image: framgia/laravel-php-fpm
-    volumes_from:
-      - application
-    expose:
-      - "9000"
-    links:
-      - workspace
-  application:
-    container_name: uploader_application
+  code:
+    container_name: uploader_code
     image: debian
     volumes:
-      - ./:/var/www/laravel
+      - ./:/var/www/app
+
   data:
     container_name: uploader_data
     image: debian
     volumes:
       - .docker/uploader_mysql:/var/lib/mysql
       - .docker/uploader_data:/data
+
+  php-fpm:
+    container_name: uploader_php-fpm
+    restart: always
+    image: vinhnguyen1512/laravel-php-fpm
+    volumes_from:
+      - code
+    expose:
+      - "9000"
+    links:
+      - workspace
+
   nginx:
     container_name: uploader_nginx
     restart: always
-    image: thangtd90/nginx-plus
+    image: nginx
     volumes_from:
       - data
-      - application
+      - code
     volumes:
       - ./.nginx/conf.d:/etc/nginx/conf.d
     ports:
       - "8000:80"
     links:
       - php-fpm
+
   mysql:
     container_name: uploader_mysql
     restart: always
@@ -48,6 +52,7 @@ services:
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
   redis:
     container_name: uploader_redis
     restart: always
@@ -56,10 +61,11 @@ services:
       - "6379"
     volumes_from:
       - data
+
   workspace:
     container_name: uploader_workspace
     restart: always
     image: vinhnguyen1512/laravel-workspace
     volumes_from:
-      - application
+      - code
     tty: true
